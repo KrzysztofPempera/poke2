@@ -1,25 +1,4 @@
-<nav class="navbar navbar-expand-sm">
-  <img
-    width="40"
-    alt="Pokedex logo"
-    src="https://img.icons8.com/color/96/000000/superball.png"
-  />
-  <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-    &#9776;
-  </button>
-
-  <div class="collapse navbar-collapse" [ngbCollapse]="isMenuCollapsed" >
-    <ul class="navbar-nav mr-auto" role="navigation">
-      <li class="nav-item"><a class="nav-link" routerLink="/" (click)="isMenuCollapsed = true"><span class="nav-link-inner">HOME</span></a></li>
-      <li class="nav-item"><a class="nav-link"  routerLink="/contact"(click)="isMenuCollapsed = true"><span class="nav-link-inner">TEST</span></a></li>
-      <li class="nav-item"><a class="nav-link"  routerLink="/pokedex"(click)="isMenuCollapsed = true"><span class="nav-link-inner">TEST</span></a></li>
-    </ul>
-    <form class="form-inline my-2 my-sm-0 search-container">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    </form>
-  </div>
-</nav>
-
+<header><app-nav-bar></app-nav-bar></header>
 <main class="container">
   <router-outlet></router-outlet>
 </main>

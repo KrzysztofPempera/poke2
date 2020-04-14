@@ -4,15 +4,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { HomeComponent } from './home/home.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
     PokedexComponent,
+    NavBarComponent,
     HomeComponent
   ],
   imports: [

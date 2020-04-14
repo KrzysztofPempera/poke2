@@ -1,0 +1,45 @@
+
+.navbar {
+  background-color: #ce334d;
+  font-weight: 600;
+  align-items: center;
+  color: white;
+}
+.navbar-toggler{
+  color: white;
+}
+.navbar-toggler:hover{
+  background: hsla(0, 0%, 100%, 0.15);
+}
+.navbar-toggler:focus{
+  background: hsla(0, 0%, 100%, 0.15);
+  outline: none;
+}
+
+.nav-link {
+  color: white;
+  cursor: pointer;
+  margin: 0 16px 0 10px;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+.nav-link:hover {
+  background: hsla(0, 0%, 100%, 0.15);
+}
+.nav-link:focus {
+  outline-offset: 4px;
+  background: hsla(0, 0%, 100%, 0.15);
+  box-shadow: 0 0 1px 2px hsla(0, 0%, 100%, 0.8);
+}
+.nav-link:active {
+  background: hsla(0, 0%, 100%, 0.15);
+}
+.nav-link-inner{
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.search-container input {
+  border: none;
+  border-radius: 100px;
+}
