@@ -2,12 +2,25 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
-import { PokedexComponent } from './pokedex/pokedex.component';
-
+import { DataDisplayComponent } from './pokedex/data-display/data-display.component';
+import { DetailsComponent } from './pokedex/details/details.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'pokedex', component: PokedexComponent}
+  {
+    path: 'pokedex',
+        children: [
+      {
+        path: '',
+        component: DataDisplayComponent
+      },
+      {
+        path: ':id',
+        component: DetailsComponent
+      }
+
+    ]
+  }
 ];
 
 @NgModule({
