@@ -20,3 +20,19 @@ export interface Types {
   previous?: any;
   results: TypeDetails[];
 }
+
+
+
+export interface Pokemon2 {
+    name: string;
+    url: string;
+}
+
+export interface Pokemon {
+    pokemon: Pokemon2;
+}
+
+export interface TypeFilter {
+    name: string;
+    pokemon: Pokemon[];
+}

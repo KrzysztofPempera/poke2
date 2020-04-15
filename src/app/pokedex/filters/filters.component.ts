@@ -9,7 +9,6 @@ export class FiltersComponent implements OnInit {
 
   @Input() type: TypeDetails;
   typeName: string;
-
   constructor() { }
 
   ngOnInit(): void {

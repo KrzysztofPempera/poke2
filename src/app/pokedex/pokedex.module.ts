@@ -9,13 +9,14 @@ import {RouterModule, Routes} from '@angular/router';
 import { CardDisplayComponent } from './card-display/card-display.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FiltersComponent } from './filters/filters.component';
+import { FilteredDisplayComponent } from './filtered-display/filtered-display.component';
 export interface DataDetailsId {
   id: string;
 }
 
 const routes: Routes = [];
 @NgModule({
-  declarations: [SearchComponent, DetailsComponent, DataDisplayComponent, CardDisplayComponent, FiltersComponent],
+  declarations: [SearchComponent, DetailsComponent, DataDisplayComponent, CardDisplayComponent, FiltersComponent, FilteredDisplayComponent],
   imports: [
     CommonModule,
     NgbModule,
