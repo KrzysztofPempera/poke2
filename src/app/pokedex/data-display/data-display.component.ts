@@ -13,6 +13,9 @@ export class DataDisplayComponent implements OnInit {
   query = '?offset=0&limit=40';
   newQuery: string;
   pokemonId = 1;
+  pageNumber = 1;
+
+  public isCollapsed = true;
 
   constructor(private pokeService: PokedexService) { }
 
@@ -23,10 +26,12 @@ export class DataDisplayComponent implements OnInit {
   nextPage() {
     this.newQuery = this.pokedex.next.slice(33);
     this.getApi(this.newQuery);
+    this.pageNumber++;
   }
   previousPage() {
     this.newQuery = this.pokedex.previous.slice(33);
     this.getApi(this.newQuery);
+    this.pageNumber--;
   }
 
   getApi(query: string) {

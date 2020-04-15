@@ -1,0 +1,23 @@
+.btn {
+  background-color: #ce334d;
+  max-height: 38px;
+  margin-left: 15px;
+}
+@media (max-width: 380px) {
+  .btn{
+    margin: 15px;
+  }
+ }
+.page-item {
+  color: rgb(108, 158, 233);
+}
+.page-item.page-number {
+  width: 6em;
+}
+.page-number .page-link {
+  color: black;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
