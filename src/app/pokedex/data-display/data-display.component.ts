@@ -13,20 +13,20 @@ export class DataDisplayComponent implements OnInit {
   query = '?offset=0&limit=40';
   newQuery: string;
   pokemonId = 1;
-  temp = 1;
+
   constructor(private pokeService: PokedexService) { }
 
   ngOnInit(): void {
     this.getApi(this.query);
-    console.log(this.temp);
   }
 
   nextPage() {
     this.newQuery = this.pokedex.next.slice(33);
-    console.log(this.newQuery);
     this.getApi(this.newQuery);
-    this.temp++;
-    console.log(this.temp);
+  }
+  previousPage() {
+    this.newQuery = this.pokedex.previous.slice(33);
+    this.getApi(this.newQuery);
   }
 
   getApi(query: string) {
