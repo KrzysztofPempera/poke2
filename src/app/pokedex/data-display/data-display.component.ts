@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PokedexService } from '../pokedex.service';
+import { Pokedex, PokedexDetails } from '../pokemon.models';
 
 @Component({
   selector: 'app-data-display',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataDisplayComponent implements OnInit {
 
-  constructor() { }
+  pokedex: Pokedex;
+  //pokemonId: number;
+
+  constructor(private pokeService: PokedexService) { }
 
   ngOnInit(): void {
+    this.pokeService.getPokemon().subscribe(data =>{
+      this.pokedex = data;
+      console.log(this.pokedex);
+    });
   }
-
+//   changeId(): void {
+//     this.pokemonId++;
+//   }
 }
