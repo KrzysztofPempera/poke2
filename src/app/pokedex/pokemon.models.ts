@@ -9,3 +9,14 @@ export interface Pokedex {
   previous?: any;
   results: PokedexDetails[];
 }
+export interface TypeDetails {
+  name: string;
+  url: string;
+}
+
+export interface Types {
+  count: number;
+  next?: any;
+  previous?: any;
+  results: TypeDetails[];
+}

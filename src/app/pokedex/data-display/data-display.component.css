@@ -8,6 +8,9 @@
     margin: 15px;
   }
  }
+#filters {
+  margin: 0 -15px 0 -15px;
+}
 .page-item {
   color: rgb(108, 158, 233);
 }

@@ -1,6 +1,10 @@
 
-<div [ngbCollapse]="isCollapsed">
-  <app-filters></app-filters>
+<div [ngbCollapse]="isCollapsed" class="row" id="filters" >
+  <ng-container *ngIf="types" >
+    <div *ngFor="let type of types.results" class="ml-1">
+      <app-filters [type] = 'type' ></app-filters>
+    </div>
+  </ng-container>
 </div>
 <div class="row mt-3">
   <button type="button" class="btn btn-danger" (click)="isCollapsed = !isCollapsed"

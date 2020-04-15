@@ -1,0 +1,8 @@
+.btn {
+  min-width: 67px;
+  padding-left: 1em;
+  background-color: #ce334d;
+}
+.btn:hover {
+  background-color: #ce334dbb;
+}

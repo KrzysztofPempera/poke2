@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PokedexService } from '../pokedex.service';
-import { Pokedex, PokedexDetails } from '../pokemon.models';
+import { Pokedex, Types } from '../pokemon.models';
 
 @Component({
   selector: 'app-data-display',
@@ -10,6 +10,7 @@ import { Pokedex, PokedexDetails } from '../pokemon.models';
 export class DataDisplayComponent implements OnInit {
 
   pokedex: Pokedex;
+  types: Types;
   query = '?offset=0&limit=40';
   newQuery: string;
   pokemonId = 1;
@@ -20,24 +21,33 @@ export class DataDisplayComponent implements OnInit {
   constructor(private pokeService: PokedexService) { }
 
   ngOnInit(): void {
-    this.getApi(this.query);
+    this.getPokedex(this.query);
+    this.getTypes();
   }
 
   nextPage() {
     this.newQuery = this.pokedex.next.slice(33);
-    this.getApi(this.newQuery);
+    this.getPokedex(this.newQuery);
     this.pageNumber++;
   }
   previousPage() {
     this.newQuery = this.pokedex.previous.slice(33);
-    this.getApi(this.newQuery);
+    this.getPokedex(this.newQuery);
     this.pageNumber--;
   }
 
-  getApi(query: string) {
+  getTypes() {
+    this.pokeService.getTypes().subscribe(data =>{
+      this.types = data;
+      this.types.results[18] = this.types.results[19];
+      this.types.results.pop();
+      console.log(this.types);
+    });
+  }
+
+  getPokedex(query: string) {
     this.pokeService.getPokedex(query).subscribe(data =>{
       this.pokedex = data;
-      console.log(this.pokedex);
     });
   }
 }
