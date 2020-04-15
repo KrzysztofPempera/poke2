@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pokedex, Types, TypeFilter } from '../pokedex/pokemon.models';
+import { Pokedex, Types, TypeFilter, Pokemon } from '../pokedex/pokemon.models';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,8 +12,12 @@ export class PokedexService {
 
   constructor(private http: HttpClient) { }
 
-  getTypeFilter(id: number): Observable<TypeFilter>{
-    return this.http.get<TypeFilter>(`${this.apiRoot}/type${id}"`);
+  getTypeFilter(name: string): Observable<Pokemon[]>{
+    return this.http.get<TypeFilter>(`${this.apiRoot}/type/${name}`)
+    .pipe(
+      map(response => response.pokemon)
+    );
+
   }
 
   getTypes(): Observable<Types>{

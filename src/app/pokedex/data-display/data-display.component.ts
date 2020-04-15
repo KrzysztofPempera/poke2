@@ -41,7 +41,6 @@ export class DataDisplayComponent implements OnInit {
       this.types = data;
       this.types.results[18] = this.types.results[19];
       this.types.results.pop();
-      console.log(this.types);
     });
   }
 

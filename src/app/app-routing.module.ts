@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { DataDisplayComponent } from './pokedex/data-display/data-display.component';
 import { DetailsComponent } from './pokedex/details/details.component';
 import { FilteredDisplayComponent} from './pokedex/filtered-display/filtered-display.component';
+import { FilteredDisplayResolver } from './pokedex/filtered-display/filtered-display.resolver';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -21,7 +22,10 @@ const routes: Routes = [
       },
       {
         path: 'type/:name',
-        component: FilteredDisplayComponent
+        component: FilteredDisplayComponent,
+        resolve: {
+          type: FilteredDisplayResolver
+        }
       }
 
     ]
@@ -29,7 +33,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: false, enableTracing: false})],
+  declarations: [],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -10,10 +10,10 @@ import { CardDisplayComponent } from './card-display/card-display.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FiltersComponent } from './filters/filters.component';
 import { FilteredDisplayComponent } from './filtered-display/filtered-display.component';
-export interface DataDetailsId {
-  id: string;
+import { FilteredDisplayResolver } from './filtered-display/filtered-display.resolver';
+export interface FilteredTypeName {
+  name: string;
 }
-
 const routes: Routes = [];
 @NgModule({
   declarations: [SearchComponent, DetailsComponent, DataDisplayComponent, CardDisplayComponent, FiltersComponent, FilteredDisplayComponent],
@@ -24,7 +24,8 @@ const routes: Routes = [];
     RouterModule.forChild(routes)
   ],
   providers: [
-    PokedexService
+    PokedexService,
+    FilteredDisplayResolver
   ]
 })
 export class PokedexModule { }

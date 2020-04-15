@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { PokedexService } from '../pokedex.service';
-import { TypeFilter } from '../pokemon.models';
+import { Pokemon, Pokemon2 } from '../pokemon.models';
 
 @Component({
   selector: 'app-filtered-display',
@@ -10,14 +10,15 @@ import { TypeFilter } from '../pokemon.models';
 })
 export class FilteredDisplayComponent implements OnInit {
 
-  type: string;
-  filteredData: TypeFilter;
+  filteredData: Pokemon[];
+  pokemon: Pokemon2;
 
   constructor(private pokeService: PokedexService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.type = this.route.snapshot.data.type.url;
-    console.log(this.type);
+    this.filteredData = this.route.snapshot.data.type;
+    this.pokemon = this.filteredData[0].pokemon;
+    console.log(this.pokemon);
   }
 
 }
