@@ -10,17 +10,29 @@ import { Pokedex, PokedexDetails } from '../pokemon.models';
 export class DataDisplayComponent implements OnInit {
 
   pokedex: Pokedex;
-  //pokemonId: number;
-
+  query = '?offset=0&limit=40';
+  newQuery: string;
+  pokemonId = 1;
+  temp = 1;
   constructor(private pokeService: PokedexService) { }
 
   ngOnInit(): void {
-    this.pokeService.getPokemon().subscribe(data =>{
+    this.getApi(this.query);
+    console.log(this.temp);
+  }
+
+  nextPage() {
+    this.newQuery = this.pokedex.next.slice(33);
+    console.log(this.newQuery);
+    this.getApi(this.newQuery);
+    this.temp++;
+    console.log(this.temp);
+  }
+
+  getApi(query: string) {
+    this.pokeService.getPokedex(query).subscribe(data =>{
       this.pokedex = data;
       console.log(this.pokedex);
     });
   }
-//   changeId(): void {
-//     this.pokemonId++;
-//   }
 }

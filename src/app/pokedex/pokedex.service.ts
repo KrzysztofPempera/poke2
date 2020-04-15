@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class PokedexService {
 
-  private readonly apiRoot = 'https://pokeapi.co/api/v2/pokemon';
+  private readonly apiRoot = 'https://pokeapi.co/api/v2';
 
   constructor(private http: HttpClient) { }
 
-  getPokemon(): Observable<Pokedex>{
-    return this.http.get<Pokedex>(this.apiRoot);
+  getPokedex(query: string): Observable<Pokedex>{
+    return this.http.get<Pokedex>(`${this.apiRoot}/pokemon${query}"`);
   }
 }
