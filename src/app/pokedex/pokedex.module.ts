@@ -7,15 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokedexService } from './pokedex.service';
 import {RouterModule, Routes} from '@angular/router';
 import { CardDisplayComponent } from './card-display/card-display.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FiltersComponent } from './filters/filters.component';
 export interface DataDetailsId {
   id: string;
 }
 
 const routes: Routes = [];
 @NgModule({
-  declarations: [SearchComponent, DetailsComponent, DataDisplayComponent, CardDisplayComponent],
+  declarations: [SearchComponent, DetailsComponent, DataDisplayComponent, CardDisplayComponent, FiltersComponent],
   imports: [
     CommonModule,
+    NgbModule,
     HttpClientModule,
     RouterModule.forChild(routes)
   ],
