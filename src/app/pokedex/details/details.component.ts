@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { PokemonDetails, Sprites, Type, Ability } from '../pokemon.models';
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
@@ -17,9 +18,10 @@ export class DetailsComponent implements OnInit {
   pokemonHeight: number;
   pokemonWeight: number;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.pokemon = this.route.snapshot.data.details;
     this.pokemonName = this.pokemon.name[0].toUpperCase() + this.pokemon.name.slice(1);
     this.pokemonId = this.pokemon.id;

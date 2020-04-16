@@ -12,6 +12,7 @@ import { FilteredDisplayComponent } from './filtered-display/filtered-display.co
 import { FilteredDisplayResolver } from './filtered-display/filtered-display.resolver';
 import { DetailsResolver } from './details/details.resolver';
 
+
 export interface FilteredTypeName {
   name: string;
 }

@@ -27,7 +27,7 @@ export class PokedexService {
     return this.http.get<Pokedex>(`${this.apiRoot}/pokemon${query}"`);
   }
 
-  getPokemon(id: number): Observable<PokemonDetails>{
-    return this.http.get<PokemonDetails>(`${this.apiRoot}/pokemon/${id}`);
+  getPokemon(id?: number, name?: string): Observable<PokemonDetails>{
+    return this.http.get<PokemonDetails>(`${this.apiRoot}/pokemon/${id ? id : name}`);
   }
 }
