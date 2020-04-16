@@ -15,9 +15,6 @@
     </ul>
     <form [formGroup]="pokemonSearchForm"  class="form-inline my-2 my-sm-0 search-container">
       <input class="form-control mr-sm-2" (keyup.enter)="sendToAPIXU(pokemonSearchForm.value)" formControlName="query" type="search" placeholder="Search" aria-label="Search">
-      <div class="invalid-tooltip">
-        Please choose a unique and valid username.
-      </div>
     </form>
   </div>
 </nav>
