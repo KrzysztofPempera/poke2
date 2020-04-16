@@ -16,8 +16,9 @@ import { DetailsResolver } from './details/details.resolver';
 export interface FilteredTypeName {
   name: string;
 }
-export interface DetailsId {
+export interface DetailsQuery{
   id: number;
+  name: string;
 }
 
 const routes: Routes = [];

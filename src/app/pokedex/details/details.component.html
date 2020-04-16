@@ -1,1 +1,20 @@
-<p>{{pokemon}}</p>
+
+<div class="card">
+  <div class="row ">
+    <div class="col-md-4">
+        <img src={{pokemonImg.front_default}} class="card-img" alt="...">
+      </div>
+      <div class="col-md-8 p-3">
+        <div class="card-block p-3">
+          <h4 class="card-title">{{pokemonName}} #{{ pokemonId }}</h4>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" ><span>Types: </span><span *ngFor = "let type of pokemonType ">{{type.type.name}} </span></li>
+            <li class="list-group-item" ><span>Abilities: </span><span *ngFor = "let ability of pokemonAbilities ">{{ability.ability.name}} </span></li>
+            <li class="list-group-item" >Height: {{pokemonHeight}}</li>
+            <li class="list-group-item" >Weight: {{pokemonWeight}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
