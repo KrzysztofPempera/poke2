@@ -13,8 +13,9 @@
       <li class="nav-item"><a class="nav-link" routerLink="/" (click)="isMenuCollapsed = true"><span class="nav-link-inner">HOME</span></a></li>
       <li class="nav-item"><a class="nav-link"  routerLink="/pokedex"(click)="isMenuCollapsed = true"><span class="nav-link-inner">DATA</span></a></li>
     </ul>
-    <form [formGroup]="pokemonSearchForm"  class="form-inline my-2 my-sm-0 search-container">
-      <input class="form-control mr-sm-2" (keyup.enter)="sendToAPIXU(pokemonSearchForm.value)" formControlName="query" type="search" placeholder="Search" aria-label="Search">
+    <form [formGroup]="pokemonSearchForm" (ngSubmit) = "sendToAPIXU(pokemonSearchForm.value)" class="form-inline my-2 my-sm-0 search-container">
+      <input class="form-control mr-sm-2" formControlName="query" type="search" placeholder="Search" aria-label="Search">
+      <button type="submit" (keyup.enter) ="sendToAPIXU(pokemonSearchForm.value)" class="btn">SUBMIT</button>
     </form>
   </div>
 </nav>

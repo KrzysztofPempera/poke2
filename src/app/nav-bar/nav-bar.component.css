@@ -1,4 +1,3 @@
-
 .navbar {
   background-color: #ce334d;
   font-weight: 600;
@@ -42,4 +41,19 @@
 .search-container input {
   border: none;
   border-radius: 100px;
+}
+.btn {
+  background-color: #ce334d;
+  color: white;
+  margin: 0 16px 0 10px;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+.btn:hover {
+  background: hsla(0, 0%, 100%, 0.15);
+}
+.btn:focus {
+  outline-offset: 4px;
+  background: hsla(0, 0%, 100%, 0.15);
+  box-shadow: 0 0 1px 2px hsla(0, 0%, 100%, 0.8);
 }
