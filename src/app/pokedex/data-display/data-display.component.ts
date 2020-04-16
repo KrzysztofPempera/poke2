@@ -39,7 +39,7 @@ export class DataDisplayComponent implements OnInit {
   getTypes() {
     this.pokeService.getTypes().subscribe(data =>{
       this.types = data;
-      this.types.results[18] = this.types.results[19];
+      this.types.results.pop();
       this.types.results.pop();
     });
   }

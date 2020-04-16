@@ -7,7 +7,6 @@ import { DetailsComponent } from './pokedex/details/details.component';
 import { FilteredDisplayComponent} from './pokedex/filtered-display/filtered-display.component';
 import { FilteredDisplayResolver } from './pokedex/filtered-display/filtered-display.resolver';
 import { DetailsResolver } from './pokedex/details/details.resolver';
-
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {
@@ -30,6 +29,11 @@ const routes: Routes = [
         resolve: {
           type: FilteredDisplayResolver
         }
+      },
+      {
+        path: 'type/:name/:id',
+        redirectTo: '/pokedex/:id',
+        pathMatch: 'full'
       }
 
     ]
