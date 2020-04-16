@@ -1,7 +1,24 @@
-<button class="btn btn-danger" (click) = "getNextPage()" [ngClass]="(pageNumber == totalPages)?'disabled':''" >Next</button>
-<button class="btn btn-danger" (click) = "getPreviousPage()" [ngClass]="(pageNumber == 1)?'disabled':''" >Previous</button>
-<ng-container *ngIf="pokemonList">
-  <div *ngFor="let pokemon of pokemonList">
-    <p>{{ pokemon.name }}</p>
-  </div>
-</ng-container>
+<div class="row mt-3">
+  <a [routerLink] ="['/pokedex']">
+    <button type="button" class="btn btn-danger"><a></a>Go back</button>
+  </a>
+  <nav aria-label="Page navigation" class="col">
+    <ul class="pagination justify-content-end">
+      <li class="page-item" [ngClass]="(pageNumber == 1)?'disabled':''">
+        <a class="page-link" (click) = "getPreviousPage()">Previous</a>
+      </li>
+      <li class="page-item page-number disabled"><a class="page-link" href="#">{{ pageNumber }}</a></li>
+      <li class="page-item" [ngClass]="(pageNumber == totalPages)?'disabled':''">
+        <a class="page-link" (click) = "getNextPage()">Next</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-6">
+  <ng-container *ngIf="pokemonList">
+    <div *ngFor="let pokemon of pokemonList">
+      <app-card-display [pokemon] = 'pokemon'></app-card-display>
+    </div>
+  </ng-container>
+</div>

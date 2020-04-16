@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pokedex, Types, TypeFilter, Pokemon } from '../pokedex/pokemon.models';
+import { Pokedex, Types, TypeFilter, Pokemon, PokemonDetails } from '../pokedex/pokemon.models';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 @Injectable({
@@ -19,12 +19,15 @@ export class PokedexService {
     );
 
   }
-
   getTypes(): Observable<Types>{
     return this.http.get<Types>(`${this.apiRoot}/type`);
   }
 
   getPokedex(query: string): Observable<Pokedex>{
     return this.http.get<Pokedex>(`${this.apiRoot}/pokemon${query}"`);
+  }
+
+  getPokemon(id: number): Observable<PokemonDetails>{
+    return this.http.get<PokemonDetails>(`${this.apiRoot}/pokemon/${id}`);
   }
 }

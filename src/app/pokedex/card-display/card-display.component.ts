@@ -10,15 +10,14 @@ import { PokedexDetails } from '../pokemon.models';
 export class CardDisplayComponent implements OnInit {
 
   @Input() pokemon: PokedexDetails;
-  @Input() pokemonId: number;
   pokemonName: string;
   pokemonUrl: string;
-
+  pokemonId: number;
   constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.pokemonName = this.pokemon.name[0].toUpperCase() + this.pokemon.name.slice(1);
     this.pokemonUrl = this.pokemon.url;
+    this.pokemonId = Number(this.pokemonUrl.slice(34, -1));
   }
-
 }

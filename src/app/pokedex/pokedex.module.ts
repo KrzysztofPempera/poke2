@@ -11,9 +11,15 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FiltersComponent } from './filters/filters.component';
 import { FilteredDisplayComponent } from './filtered-display/filtered-display.component';
 import { FilteredDisplayResolver } from './filtered-display/filtered-display.resolver';
+import { DetailsResolver } from './details/details.resolver';
+
 export interface FilteredTypeName {
   name: string;
 }
+export interface DetailsId {
+  id: number;
+}
+
 const routes: Routes = [];
 @NgModule({
   declarations: [SearchComponent, DetailsComponent, DataDisplayComponent, CardDisplayComponent, FiltersComponent, FilteredDisplayComponent],
@@ -25,6 +31,7 @@ const routes: Routes = [];
   ],
   providers: [
     PokedexService,
+    DetailsResolver,
     FilteredDisplayResolver
   ]
 })

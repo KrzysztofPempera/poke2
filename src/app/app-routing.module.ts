@@ -6,6 +6,7 @@ import { DataDisplayComponent } from './pokedex/data-display/data-display.compon
 import { DetailsComponent } from './pokedex/details/details.component';
 import { FilteredDisplayComponent} from './pokedex/filtered-display/filtered-display.component';
 import { FilteredDisplayResolver } from './pokedex/filtered-display/filtered-display.resolver';
+import { DetailsResolver } from './pokedex/details/details.resolver';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -18,7 +19,10 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        component: DetailsComponent
+        component: DetailsComponent,
+        resolve: {
+          details: DetailsResolver
+        }
       },
       {
         path: 'type/:name',

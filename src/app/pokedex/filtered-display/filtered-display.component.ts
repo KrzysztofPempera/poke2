@@ -39,6 +39,7 @@ export class FilteredDisplayComponent implements OnInit {
   getTotalPages(): number {
     return Math.ceil(this.filteredData.length / 40);
   }
+
   getPage(pageNumber: number): Pokemon2[] {
     let index = ((pageNumber - 1) * this.pageLimit);
     if (pageNumber !== this.totalPages){
