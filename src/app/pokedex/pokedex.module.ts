@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchComponent } from './search/search.component';
 import { DetailsComponent } from './details/details.component';
 import { DataDisplayComponent } from './data-display/data-display.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,7 +22,7 @@ export interface DetailsQuery{
 
 const routes: Routes = [];
 @NgModule({
-  declarations: [SearchComponent, DetailsComponent, DataDisplayComponent, CardDisplayComponent, FiltersComponent, FilteredDisplayComponent],
+  declarations: [DetailsComponent, DataDisplayComponent, CardDisplayComponent, FiltersComponent, FilteredDisplayComponent],
   imports: [
     CommonModule,
     NgbModule,
