@@ -3,6 +3,10 @@
   max-height: 38px;
   margin-left: 15px;
 }
+.btn:hover {
+  background-color: #ce334dbb;
+}
+
 @media (max-width: 380px) {
   .btn{
     margin: 15px;

@@ -1,6 +1,7 @@
 .card {
-  min-width: 142.5px;
+  min-width: 200px;
   font-weight: 600;
+  white-space: nowrap;
 }
 .button {
   color: white;
