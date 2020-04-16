@@ -23,6 +23,18 @@ export class FilteredDisplayComponent implements OnInit {
     this.totalPages = this.getTotalPages();
     this.pokemonList = this.getPage(this.pageNumber);
   }
+  getNextPage(){
+    if (this.pageNumber !== this.totalPages) {
+      this.pageNumber++;
+      this.pokemonList = this.getPage(this.pageNumber);
+    }
+  }
+  getPreviousPage(){
+    if (this.pageNumber !== 1) {
+      this.pageNumber--;
+      this.pokemonList = this.getPage(this.pageNumber);
+    }
+  }
 
   getTotalPages(): number {
     return Math.ceil(this.filteredData.length / 40);

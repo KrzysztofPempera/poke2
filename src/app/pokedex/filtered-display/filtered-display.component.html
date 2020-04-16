@@ -1,3 +1,5 @@
+<button class="btn btn-danger" (click) = "getNextPage()" [ngClass]="(pageNumber == totalPages)?'disabled':''" >Next</button>
+<button class="btn btn-danger" (click) = "getPreviousPage()" [ngClass]="(pageNumber == 1)?'disabled':''" >Previous</button>
 <ng-container *ngIf="pokemonList">
   <div *ngFor="let pokemon of pokemonList">
     <p>{{ pokemon.name }}</p>
